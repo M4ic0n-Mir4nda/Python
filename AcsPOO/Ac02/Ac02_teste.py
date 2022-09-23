@@ -1,6 +1,3 @@
-# ARQUIVO DE TESTE PARA A ATIVIDADE CONTÍNUA 02
-# Este arquivo não deve ser modificado.
-
 # Importa as classes do módulo ac02
 from ac02 import Endereco, Cliente, Pedido, Historico
 
