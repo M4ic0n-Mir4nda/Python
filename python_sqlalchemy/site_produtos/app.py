@@ -66,9 +66,9 @@ def adicionar():
             request.form['descricao'],
             request.form['quantidade'],
             request.form['valor'])
-        lista_prod.append(produto)
         session.add(produto)
         session.commit()
+        #lista_prod.append(produto) Erro ao adicionar a lista na 2° vez e retornar a view para o usúario
         return redirect(url_for('index'))
 
 app.run(debug=True)
