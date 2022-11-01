@@ -33,7 +33,6 @@ connection.execute('''CREATE TABLE IF NOT EXISTS FILME(
                         DIRETOR VARCHAR(255),
                         AVALIACAO FLOAT)''')
 
-
 # Implementar classe Filme e realizar o mapeamento da tabela
 
 class Filme(Base):
@@ -53,7 +52,6 @@ class Filme(Base):
         self.pais = pais
         self.diretor = diretor
         self.avaliacao = avaliacao
-
 
 # Importar filmes do arquivo de texto movies.txt e inserir no banco de dados
 # Formato do arquivo: 
