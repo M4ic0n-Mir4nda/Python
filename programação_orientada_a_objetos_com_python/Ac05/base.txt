@@ -1,0 +1,2 @@
+total em movies = 993
+total removidos = 109
