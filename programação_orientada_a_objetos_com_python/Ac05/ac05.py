@@ -1,12 +1,12 @@
 # ATIVIDADE CONTÍNUA 05
 
 # NOMES DOS ALUNOS: (MÁXIMO 6):
-# ALUNO 1: nome
-# ALUNO 2: nome
-# ALUNO 3: nome
-# ALUNO 4: nome
-# ALUNO 5: nome
-# ALUNO 6: nome
+# ALUNO 1: Maicon Miranda 2200966
+# ALUNO 2: Juliana Albuquerque 2201128
+# ALUNO 3: Maycon Carceres 2201047
+# ALUNO 4: Nathalia Araujo 2201044
+# ALUNO 5: Larissa Ferreira 
+# ALUNO 6: Kaique Fischer 
 
 # IMPORTAR MÓDULOS
 from sqlalchemy import create_engine, Column, Integer, String, Float
@@ -88,7 +88,6 @@ for filme in resultado:
     print(f'{filme.titulo} | {filme.ano} | {filme.duracao} | {filme.pais} | {filme.diretor} | {filme.avaliacao}')
 
 # Excluir todos os filmes do ano de 2020
-
 resultado = session.query(Filme).filter(Filme.ano == 2020)
 for filme in resultado:
     session.delete(filme)
@@ -96,11 +95,10 @@ for filme in resultado:
 
 # Exportar filmes para um arquivo de texto, ordenados pelo título e no formato:
 # título;ano;duracao;país;diretor;avaliacao
-
-arquivo = open('movies_2.txt', 'w', encoding='UTF-8')
 resultado = session.query(Filme)
+arquivo = open('movies_2.txt', 'w', encoding='UTF-8')
 for filmes in resultado:
-    filmes.write(f'{filmes.titulo};{str(filmes.ano)};{str(filmes.duracao)};{filmes.pais};{filmes.diretor};{str(filmes.avaliacao)}', end='')
+    arquivo.write(f'{filmes.titulo};{str(filmes.ano)};{str(filmes.duracao)};{filmes.pais};{filmes.diretor};{str(filmes.avaliacao)} \n')
 
 arquivo.close()
 connection.close()
