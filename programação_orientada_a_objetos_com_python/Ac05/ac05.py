@@ -5,8 +5,8 @@
 # ALUNO 2: Juliana Albuquerque 2201128
 # ALUNO 3: Maycon Carceres 2201047
 # ALUNO 4: Nathalia Araujo 2201044
-# ALUNO 5: Larissa Ferreira 
-# ALUNO 6: Kaique Fischer 
+# ALUNO 5: Larissa Ferreira 2200761
+# ALUNO 6: Kaique Fischer 2201268
 
 # IMPORTAR MÓDULOS
 from sqlalchemy import create_engine, Column, Integer, String, Float
