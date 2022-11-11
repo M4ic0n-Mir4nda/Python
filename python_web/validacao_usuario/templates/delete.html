@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='list.css') }}">
 </head>
 <body>
-    <form>
+    <form  method="POST">
         <table class="table table-striped mb-0">
             <thead style="background-color: #002d72;">
             <tr>
@@ -20,19 +20,21 @@
             {% for produto in produtos %}
             <tbody>
             <tr>
-                <td>{{produto.id}}</td>
-                <td>{{produto.descricao}}</td>
-                <td>{{produto.quantidade}}</td>
-                <td>{{produto.valor}}</td>
+                <td>
+                    {{id}}
+                    {{produto.descricao}}
+                </td>
+                <td>
+                    {{produto.quantidade}}
+                </td>
+                <td>
+                    {{produto.valor}}
+                </td>
             </tr>
             </tbody>
             {% endfor %}
         </table>
-        <br>
-        <a href="{{ url_for('novo') }}">Adicionar Produto</a>
-        <br>
-        <br>
-        <a href="{{ url_for('estoque') }}">Deletar</a>
+        <input type="text">
     </form>
 </body>
 </html>
