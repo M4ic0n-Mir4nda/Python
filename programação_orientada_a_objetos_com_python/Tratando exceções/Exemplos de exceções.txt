@@ -1,0 +1,15 @@
+Exception - Classe genérica para todas as exceções 
+
+ArithmeticError - Erros Aritméticos
+
+AttributeError - Falha no acesso ou atribuição a atributo de classe
+
+ZeroDivisionError - Erro em divisão por zero
+
+IndexError - Índice inexistente em listas ou tuplas
+
+KeyError - Chave inexistente de dicionário
+
+NameError - Variável Inexistente
+
+ValueError - Conversão de tipos inválidos
