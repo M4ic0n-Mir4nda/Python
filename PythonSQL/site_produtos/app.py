@@ -28,20 +28,13 @@ lista_prod = [prod1, prod2]
 @app.route('/')
 def index():
     try:
-        consulta = """select * from produto"""
+        consulta = """select codigo, descricao, quantidade, valor from PRODUTO"""
         cursor.execute(consulta)
         data = cursor.fetchall()
         for row in data:
-            codigo = row[1]
-            descricao = row[2]
-            quantidade = row[3]
-            valor = row[4]
             return render_template('index.html', 
-                titulo='Produtos', 
-                codigo=codigo, 
-                descricao=descricao, 
-                quantidade=quantidade, 
-                valor=valor)
+                titulo='Produtos',
+                produtos=data)
         cursor.close()
     except Exception:
         return 'Erro ao carregar dados'
