@@ -2,7 +2,7 @@ import pyodbc
 
 dados_conexao = (
     "Driver={SQL Server};"
-    "Server={DESKTOP-E9ARPQB};"
+    "Server=DESKTOP-E9ARPQB;"
     "Database=PythonSQL;"
 )
 
@@ -20,8 +20,7 @@ while True:
         nome = input('Nome: ')
         idade = int(input('Idade: '))
         email = input('Digite seu e-mail: ')
-        comando = f"""INSERT INTO USUARIO
-                    (NOME, IDADE, EMAIL)
+        comando = f"""INSERT INTO USUARIO (NOME, IDADE, EMAIL)
                     VALUES
                     ('{nome}', {idade}, '{email}')"""
         cursor.execute(comando)

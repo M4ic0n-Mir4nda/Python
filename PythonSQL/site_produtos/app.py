@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, url_for, request
 
 dados_conexao = (
     "Driver={SQL Server};"
-    "Server=DESKTOP-E9ARPQB;"
+    "Server={DESKTOP-E9ARPQB};"
     "Database=PythonSQL;"
 )
 
@@ -27,7 +27,24 @@ lista_prod = [prod1, prod2]
 
 @app.route('/')
 def index():
-    return render_template('index.html', titulo='Produtos', produtos=lista_prod)
+    try:
+        consulta = """select * from produto"""
+        cursor.execute(consulta)
+        data = cursor.fetchall()
+        for row in data:
+            codigo = row[1]
+            descricao = row[2]
+            quantidade = row[3]
+            valor = row[4]
+            return render_template('index.html', 
+                titulo='Produtos', 
+                codigo=codigo, 
+                descricao=descricao, 
+                quantidade=quantidade, 
+                valor=valor)
+        cursor.close()
+    except Exception:
+        return 'Erro ao carregar dados'
 
 @app.route('/estoque')
 def estoque():
@@ -41,22 +58,14 @@ def adicionar():
         quantidade = request.form['quantidade']
         valor = request.form['valor']
         produto = Produto(codigo, descricao, quantidade, valor)
-        cadastro_prod = f"""
-            INSERT INTO PRODUTO (CODIGO, DESCRICAO, QUANTIDADE, VALOR)
-            VALUES
-            ('{codigo}', '{descricao}', {quantidade}, {valor})
-            """
+        cadastro_prod = f"""INSERT INTO PRODUTO 
+                            (CODIGO, DESCRICAO, QUANTIDADE, VALOR)
+                            VALUES
+                            ('{codigo}', '{descricao}', {quantidade}, {valor})
+                        """
         cursor.execute(cadastro_prod)
         cursor.commit()
         lista_prod.append(produto)
-
-        '''
-        produto = Produto(
-            request.form['codigo'],
-            request.form['descricao'],
-            request.form['quantidade'],
-            request.form['valor'])
-        '''
         return redirect(url_for('index'))
 
 app.run(debug=True)

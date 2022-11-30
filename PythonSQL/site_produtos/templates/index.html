@@ -17,18 +17,17 @@
                 <td>Valor</td>
             </tr>
         </thead>
-        {% for produto in produtos %}
         <tbody>
             <tr>
-                <td><a href="#">{{produto.codigo}}</a></td>
-                <td>{{produto.descricao}}</td>
-                <td>{{produto.quantidade}}</td>
-                <td>{{produto.valor}}</td>
+                <td><a href="#">{{codigo}}</a></td>
+                <td>{{descricao}}</td>
+                <td>{{quantidade}}</td>
+                <td>{{valor}}</td>
             </tr>
         </tbody>
-        {% endfor %}
     </table>
     <br>
+    <h3>{{teste}}</h3>
     <a href="{{url_for('estoque')}}">Adicionar Produto</a>
 </body>
 </html>
