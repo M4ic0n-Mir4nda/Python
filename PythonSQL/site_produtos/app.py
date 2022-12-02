@@ -14,28 +14,31 @@ cursor = conexao.cursor()
 
 app = Flask(__name__)
 
-class Produto:
-    def __init__(self, codigo, descricao, quantidade, valor):
-        self.codigo = codigo
-        self.descricao = descricao
-        self.quantidade = quantidade
-        self.valor = valor
-
-prod1 = Produto(12563, 'Arroz 5kg', 50, 15.22)
-prod2 = Produto(52369, 'Bolacha trakinas', 31, 2.99)
-lista_prod = [prod1, prod2]
 
 @app.route('/')
 def index():
     try:
         consulta = """select codigo, descricao, quantidade, valor from PRODUTO"""
+        descricao = """SELECT DESCRICAO FROM PRODUTO"""
+        quantidade = """SELECT QUANTIDADE FROM PRODUTO"""
+        valor = """SELECT VALOR FROM PRODUTO"""
         cursor.execute(consulta)
         data = cursor.fetchall()
         for row in data:
-            return render_template('index.html', 
-                titulo='Produtos',
-                produtos=data)
-        cursor.close()
+            pass
+        cursor.execute(descricao)
+        desc = cursor.fetchall()
+        for row in desc:
+            pass
+        cursor.execute(quantidade)
+        qtd = cursor.fetchall()
+        for row in qtd:
+            pass
+        cursor.execute(valor)
+        val = cursor.fetchall()
+        for row in val:
+            pass
+        return render_template('index.html', titulo='Produtos', produtos=data, descricao=desc, quantidade=qtd, valor=val)
     except Exception:
         return 'Erro ao carregar dados'
 
@@ -50,7 +53,6 @@ def adicionar():
         descricao = request.form['descricao']
         quantidade = request.form['quantidade']
         valor = request.form['valor']
-        produto = Produto(codigo, descricao, quantidade, valor)
         cadastro_prod = f"""INSERT INTO PRODUTO 
                             (CODIGO, DESCRICAO, QUANTIDADE, VALOR)
                             VALUES
@@ -58,7 +60,6 @@ def adicionar():
                         """
         cursor.execute(cadastro_prod)
         cursor.commit()
-        lista_prod.append(produto)
         return redirect(url_for('index'))
 
 app.run(debug=True)

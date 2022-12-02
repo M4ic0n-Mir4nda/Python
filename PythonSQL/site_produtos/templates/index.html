@@ -20,7 +20,6 @@
         </thead>
         <tbody>
             {% for row in produtos %}
-            <a href="%"></a>
                 <tr>
                     {% for prod in row %}
                         <td>{{ prod }}</td>
@@ -29,6 +28,11 @@
             {% endfor %}
         </tbody>
     </table>
+        {% for row in descricao %}
+            {% for desc in row %}
+                <span>{{ desc }}</span> <br>
+            {% endfor %}
+        {% endfor %}
     <br>
     <a href="{{url_for('estoque')}}">Adicionar Produto</a>
 </body>
