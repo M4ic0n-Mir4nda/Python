@@ -1,13 +1,6 @@
 # PROGRAMAÇÃO ORIENTADA A OBJETOS
 # ATIVIDADE CONTÍNUA 03
 
-# INSIRA ABAIXO O NOME DOS ALUNOS DO GRUPO (máximo 6)
-# ALUNO 1: Maicon Miranda - 2200966
-# ALUNO 2: Maycon Caceres - 2201047
-# ALUNO 3: Juliana Albuquerque - 2201128
-# ALUNO 4: Larissa Ferreira - 2200761
-# ALUNO 5: Gustavo Gonçalves - 2200601
-
 
 class Escola:
     def __init__(self, nome):
