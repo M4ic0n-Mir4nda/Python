@@ -31,13 +31,13 @@ def products():
 def product(id):
     try:
         if id == 0:
-            return jsonify('Error: id não existe'), 404
+            return jsonify('Error: id não existe'), 500
         item = [
             f'id: {listProducts[id - 1]["id"]}',
             f'name: {listProducts[id - 1]["name"]}'
         ]
         return jsonify(item), 200
     except:
-        return jsonify('Error: id não existe'), 404
+        return jsonify('Error: id não existe'), 500
 
 app.run(debug=True)
