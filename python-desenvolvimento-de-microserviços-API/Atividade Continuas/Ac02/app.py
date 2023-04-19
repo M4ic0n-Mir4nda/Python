@@ -1,7 +1,5 @@
 from flask import Flask, jsonify
 
-# Maicon Miranda - RA: 2200966
-
 app = Flask(__name__)
 
 listProducts = [
