@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  mysql:
+    volumes:
+    - db:/var/lib/mysql
+    - ./mydb.sql:/docker-entrypoint-initdb.d/mydb.sql
+    image: mysql:8.0
+    container_name: db_container
+    restart: always
+    environment:
+      MYSQL_DATABASE: $DB_DATABASE
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+      MYSQL_ROOT_HOST: $DB_HOST
+    ports:
+      - '3306:3306'
+
+volumes:
+  db:
+    driver: local
