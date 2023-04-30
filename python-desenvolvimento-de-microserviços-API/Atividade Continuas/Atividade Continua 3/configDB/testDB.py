@@ -11,4 +11,4 @@ if con.is_connected():
 if con.is_connected():
     cursor.close()
     con.close()
-    print("Conexão ao MySQL foi encerrada") 
+    print("Conexão ao MySQL foi encerrada")
