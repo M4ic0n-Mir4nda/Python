@@ -1,7 +1,7 @@
 # Atividade contínua 03 - Desenvolvimento de APIs e Microsserviços
 
 
-Atividade Continua 3: consiste em fazer a criação de uma API em Python com persistencia de dados com os métodos GET, POST, DELETE.
+Atividade Continua 3: consiste em fazer a criação de uma API em Python com conexão ao um BD e com os métodos GET, POST, DELETE.
 
 | :label: Tecnologias | Python, Flask, MySQL-Connector, Docker (tecnologias utilizadas)
 
