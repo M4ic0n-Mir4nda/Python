@@ -1,0 +1,37 @@
+<html>
+
+<body>
+
+    <p>Digite o seu nome:</p>
+
+    <form id="form_dados">
+
+        <input name="nome" type="text">
+
+        <input name="sobrenome" type="text">
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+
+</html>
+
+<!-- 
+    Localizando elementos pelo NAME
+form = navegador.find_element(By.ID, "form_dados")
+
+    Localizando elementos pelo TAG_NAME
+nome = navegador.find_element(By.NAME, "nome")
+sobrenome = navegador.find_element(By.NAME, "sobrenome") 
+
+    Localizando elementos pelo XPATH
+form = navegador.find_element(By.XPATH, "/html/body/form[1]")
+form = navegador.find_element(By.XPATH, "//form[1]")
+form = navegador.find_element(By.XPATH, "//form[@id='form_dados']")
+
+nome = navegador.find_element(By.XPATH, "//form[input/@name='nome']")
+nome = navegador.find_element(By.XPATH, "//form[@id='form_dados']/input[1]")
+nome = navegador.find_element(By.XPATH, "//input[@name='nome']") 
+ -->

@@ -1,0 +1,34 @@
+<html>
+
+<body>
+
+    <a href="http://www.youtube.com">Vídeos no youtube</a>
+
+    <a href="http://www.google.com">Pesquisa no google</a>
+
+</body>
+
+</html>
+
+<!-- 
+    Localizando elementos pelo NAME
+form = navegador.find_element(By.ID, "form_dados")
+
+    Localizando elementos pelo TAG_NAME
+nome = navegador.find_element(By.NAME, "nome")
+sobrenome = navegador.find_element(By.NAME, "sobrenome") 
+
+    Localizando elementos pelo XPATH
+form = navegador.find_element(By.XPATH, "/html/body/form[1]")
+form = navegador.find_element(By.XPATH, "//form[1]")
+form = navegador.find_element(By.XPATH, "//form[@id='form_dados']")
+
+nome = navegador.find_element(By.XPATH, "//form[input/@name='nome']")
+nome = navegador.find_element(By.XPATH, "//form[@id='form_dados']/input[1]")
+nome = navegador.find_element(By.XPATH, "//input[@name='nome']") 
+
+    Localizando Hiperlinks pelo texto
+ancora_google = navegador.find_element(By.LINK_TEXT, "Pesquisa no google")
+ancora_youtube = navegador.find_element(By.PARTIAL_LINK_TEXT, "youtube")
+
+ -->

@@ -1,0 +1,53 @@
+<html>
+
+<body>
+
+    <p class="conteudo">O conteúdo vem aqui</p>
+
+    <select name="opcoes">
+
+        <option value="1">C/C++</option>
+
+        <option value="2" selected>Python</option>
+
+        <option value="3">Java</option>
+
+        <option value="4">C#</option>
+
+        <option value="5">PHP</option>
+
+        <option value="6">JavaScript</option>
+
+    </select>
+
+</body>
+
+</html>
+
+<!-- 
+    Localizando elementos pelo NAME
+form = navegador.find_element(By.ID, "form_dados")
+
+    Localizando elementos pelo TAG_NAME
+nome = navegador.find_element(By.NAME, "nome")
+sobrenome = navegador.find_element(By.NAME, "sobrenome") 
+
+    Localizando elementos pelo XPATH
+form = navegador.find_element(By.XPATH, "/html/body/form[1]")
+form = navegador.find_element(By.XPATH, "//form[1]")
+form = navegador.find_element(By.XPATH, "//form[@id='form_dados']")
+
+nome = navegador.find_element(By.XPATH, "//form[input/@name='nome']")
+nome = navegador.find_element(By.XPATH, "//form[@id='form_dados']/input[1]")
+nome = navegador.find_element(By.XPATH, "//input[@name='nome']") 
+
+    Localizando Hiperlinks pelo texto
+ancora_google = navegador.find_element(By.LINK_TEXT, "Pesquisa no google")
+ancora_youtube = navegador.find_element(By.PARTIAL_LINK_TEXT, "youtube")
+
+    Localizando elementos pelo CLASS_NAME
+conteudo = navegador.find_element(By.CLASS_NAME, "conteudo")
+
+    Localizando elementos pelo CSS_SELECTOR
+conteudo = navegador.find_element(By.CSS_SELECTOR, "p.conteudo")
+ -->
