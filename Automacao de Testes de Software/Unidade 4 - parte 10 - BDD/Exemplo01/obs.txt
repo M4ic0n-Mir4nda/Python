@@ -1,0 +1,11 @@
+Feature fornece uma descrição de alto nível nas funcionalidades do software.
+
+Given especifica uma pré-condição.
+
+When define alguma ação.
+
+And é utilizado para incluir passos adicionais junto com as etapas Given, When e Then.
+
+-----------
+
+pytest-bdd generate features/calculadora.feature > tests/test_calculadora_soma.py

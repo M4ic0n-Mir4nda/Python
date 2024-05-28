@@ -1,0 +1,9 @@
+As palavras Scenario Outline permitem agrupar cenários de maneira mais concisa, sendo possível realizar testes fornecidos como entrada pelo uso da palavra Examples. Os valores de exemplos serão substituídos por parâmetros delimitados por < e >. Então, um Scenario Outline deve necessariamente conter um ou mais seções Examples. 
+
+Observe que a Figura 10.5 apresenta um Scenario Outline para o cálculo de soma de dois números, e logo abaixo na seção Examples há um conjunto de testes de entrada e também um resultado para ser validado na função de teste.
+
+Com o arquivo calculadora.feature criado, agora será necessário gerar o arquivo de teste. Para isso utilize a seguinte instrução:
+
+------------------
+
+pytest-bdd generate features/calculadora.feature > tests/test_calculadora_soma.py
