@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # MySQL Container
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+
+  # Flask Container
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-flask
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_ENV: development
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: root
+      MYSQL_HOST: db
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      SECRET_KEY: ${SECRET_KEY}
+    depends_on:
+      - db
+    command: flask run --host=0.0.0.0 --port=8080
+
+volumes:
+  mysql:
