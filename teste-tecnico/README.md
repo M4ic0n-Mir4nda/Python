@@ -1,21 +1,26 @@
 # To do List App
 
-## Descrição
+## Description
 
-Nork-Town é um lugar estranho. Corvos grasnam na manhã enevoada enquanto velhos apertam os olhos. É uma cidade pequena, então o prefeito teve uma ideia brilhante de limitar o número de carros que uma pessoa pode possuir. Uma pessoa pode ter até 3 veículos. O veículo, registrado para uma pessoa, pode ter uma cor, ‘amarelo’, ‘azul’ ou ‘cinza’. E um dos três modelos, ‘hatch’, ‘sedã’ ou ‘conversível’. A oficina de carros Carford quer um sistema onde eles possam adicionar proprietários de carros e carros. Os proprietários de carros podem não ter carros ainda, eles precisam ser marcados como uma oportunidade de venda. Carros não podem existir no sistema sem proprietários.
+Nork-Town is a weird place. Crows cawk the misty morning while old men squint. It’s a small
+town, so the mayor had a bright idea to limit the number of cars a person may possess. One
+person may have up to 3 vehicles. The vehicle, registered to a person, may have one color,
+‘yellow’, ‘blue’ or ‘gray’. And one of three models, ‘hatch’, ‘sedan’ or ‘convertible’.
+Carford car shop want a system where they can add car owners and cars. Car owners may not have cars yet, they need to be marked as a sale opportunity. Cars cannot exist in the
+system without owners.
 
-## Requisitos
+## Requirements
 
-- **Configurar o ambiente de desenvolvimento com Docker**
-  - Usar docker-compose com quantos volumes forem necessários
-- **Usar o framework Flask do Python e qualquer outra biblioteca**
-- **Usar qualquer banco de dados SQL**
-- **Rotas seguras**
-- **Escrever testes**
+- **Setup the dev environment with docker**
+  - Using docker-compose with as many volumes as it takes
+- **Use Python’s Flask framework and any other library**
+- **Use any SQL database**
+- **Secure routes**
+- **Write tests**
 
-## Como Iniciar
+## How to Start
 
-Para iniciar o aplicativo, basta executar o seguinte comando no terminal:
+To start the application, simply run the following command in the terminal:
 
 ```bash
 docker-compose up -d
