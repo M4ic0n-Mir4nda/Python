@@ -19,5 +19,15 @@ Para iniciar o aplicativo, basta executar o seguinte comando no terminal:
 
 ```bash
 docker-compose up -d
+```
+
+| Método | Endpoint | Descrição                      |
+|--------|----------|--------------------------------|
+| GET    | /owner   | Returns the list of all owners |
+| POST   | /owner   | Register a new owner           |
+| GET    | /cars/:id | Returns all cars from one owner |
+| POST   | /cars | Register a new car for owner   |
+
+
 
 
